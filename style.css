@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #0b1b2b;
+    color: #fff;
+  }
+  
+  /* Loader style */
+  #loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0b1b2b;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 9999;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0b1b2b;
+  }
+  
+  .logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  nav a {
+    margin-left: 20px;
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #fff;
+  }
+  
+  .center {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .center img {
+    width: 350px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .center img:hover {
+    transform: scale(1.1);
+  }
+  
+  h1, h2 {
+    color: orange;
+    margin: 20px 0 10px;
+    
+  }
+  
+  .about-section, .quizzes-section, .projects-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .item {
+    background: #1b2d45;
+    margin: 10px auto;
+    padding: 10px;
+    width: 70%;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .item:hover {
+    background: #223b5d;
+    transform: translateY(-5px);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0b1b2b;
+    color: #88a;
+  }
+  
+  .link {
+    color: #88a;
+  }
+  
+  @media (max-width: 600px) {
+    nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* Background floating circles */
+.background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* ensure it is behind */
+    pointer-events: none; /* para hindi maapektuhan yung clicks sa content */
+  }
+  
+  .background-effect span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15); /* mas visible */
+    bottom: -150px;
+    border-radius: 50%;
+    animation: float 20s infinite, twinkle 3s infinite ease-in-out;
+  }
+  
+  /* FLOAT UP effect */
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-1000px) translateX(200px);
+      opacity: 0;
+    }
+  }
+  
+  /* TWINKLE kutitap effect */
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  /* Para iba-iba sizes and speed */
+  .background-effect span:nth-child(1) {
+    left: 10%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 18s, 4s;
+  }
+  .background-effect span:nth-child(2) {
+    left: 20%;
+    width: 25px;
+    height: 25px;
+    animation-duration: 22s, 5s;
+  }
+  .background-effect span:nth-child(3) {
+    left: 35%;
+    width: 10px;
+    height: 10px;
+    animation-duration: 14s, 3s;
+  }
+  .background-effect span:nth-child(4) {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 20s, 4s;
+  }
+  .background-effect span:nth-child(5) {
+    left: 65%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 26s, 6s;
+  }
+  .background-effect span:nth-child(6) {
+    left: 80%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 16s, 4s;
+  }
+/* Galaxy Background */
+.galaxy-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(128, 0, 255, 0.4), transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(0, 255, 255, 0.3), transparent 50%),
+                radial-gradient(circle at 50% 70%, rgba(255, 0, 255, 0.3), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.2), transparent 50%);
+    background-color: black;
+    background-size: 200% 200%;
+    animation: moveGalaxy 60s ease-in-out infinite;
+    z-index: -5;
+  }
+  
+  /* Animation for slow movement */
+  @keyframes moveGalaxy {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  /* Twinkling Stars */
+  .galaxy-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background: transparent;
+    
+    background-size: 50px 50px;
+    opacity: 0.5;
+    animation: twinkling 200s linear infinite;
+  }
+  
+  @keyframes twinkling {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100px, -100px);
+    }
+  }
+  
+  
+  
+/* Aurora Background */
+.aurora-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.2), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.2), transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 128, 255, 0.2), transparent 50%);
+    background-size: 200% 200%;
+    animation: moveAurora 20s ease infinite;
+    z-index: -2; /* pinaka likod ng lahat */
+  }
+  
+  /* Aurora Animation */
+  @keyframes moveAurora {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+ 
+  /* Navbar styles */
+header {
+    position: fixed; /* <-- Important! Fixed sa top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000; /* <-- Important! Para laging nasa ibabaw */
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Responsive design for mobile */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 150px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+    }
+  
+    .navbar.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  /* Adjust content so it won't hide behind navbar */
+  #content {
+    padding-top: 80px; /* Para hindi matabunan ng fixed navbar */
+  }
+  

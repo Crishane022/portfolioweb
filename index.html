@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effect">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="galaxy-background"></div>
+      <div class="aurora-background"></div>
+
+
+  <div id="loader">
+    <h1>Loading...</h1>
+  </div>
+
+  <div id="content" style="display: none;">
+    <header>
+        <div class="logo">PORTFOLIO</div>
+        <nav class="navbar" id="navbar">
+          <a href="#home">Home</a>
+          <a href="#about">About Me</a>
+          <a href="#quizzes">Quizzes</a>
+          <a href="#projects">Projects</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </nav>
+    </header>
+   
+    <section id="home" class="center">
+      <img src="avatar-placeholder.jpg" alt="Avatar">
+      <h1>I am Crishane</h1>
+    
+      <p><a href="#about" class="link">Click here to know About Me</a></p>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>Hi, my name is Crishane, <br>
+        and this is My Web Portfolio<br>
+        </p>
+        <p>
+          <a href="#" onclick="showImage('resume.jpg')" class="link">Click here to view my Resume</a>
+        </p>
+      </section>
+      
+      
+    </section>
+
+    <section id="quizzes" class="quizzes-section">
+        <h2>Quizzes</h2>
+        <div class="item" onclick="showImage('quiz1.jpg')">Quiz 1 </div>
+        <div class="item" onclick="showImage('quiz2.jpg')">Quiz 2 </div>
+        <div class="item" onclick="showImage('quiz3.jpg')">Quiz 3 </div>
+        <div class="item" onclick="showImage('quiz4.jpg')">Quiz 4 </div>
+        <div class="item" onclick="showImage('quiz5.jpg')">Quiz 5 </div>
+        <div class="item" onclick="showImage('longquiz.jpg')">Long Quiz Midterm </div>
+        <div class="item" onclick="showImage('exam.jpg')"> Midterm Exam</div>
+         <div class="item" onclick="showImage('test.png')"> Pre Test</div>
+
+      </section>
+      
+      <!-- Add a hidden popup modal -->
+      <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+        background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+        <img id="popup-img" src="" style="max-width:90%; max-height:90%;">
+      </div>
+      
+
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+      <div class="item">Project 1 - Website Portfolio</div>
+      
+    </section>
+
+          
+
+    <footer>
+      <p>CONTACT ME<br>crishanedelacruz@gmail.com</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
